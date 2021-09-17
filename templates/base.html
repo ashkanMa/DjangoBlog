@@ -1,0 +1,14 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}placeholder{% endblock %}</title>
+    {% block header_reference %}{% endblock %}
+    <link rel="stylesheet" href="{% static 'app.css' %}">
+</head>
+<body>
+{% block content %}{% endblock %}
+{% block footer_references %}{% endblock %}
+</body>
+</html>
