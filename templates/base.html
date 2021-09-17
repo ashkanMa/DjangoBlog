@@ -2,12 +2,17 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <title>{% block title %}placeholder{% endblock %}</title>
-    {% block header_reference %}{% endblock %}
+   <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'app.css' %}">
+    {% block header_reference %}{% endblock %}
 </head>
 <body>
+ <header id="main-navigation">
+        <nav>
+            <a href="{% url 'all_article' %}">All Posts</a>
+        </nav>
+    </header>
 {% block content %}{% endblock %}
 {% block footer_references %}{% endblock %}
 </body>

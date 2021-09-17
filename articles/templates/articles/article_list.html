@@ -1,19 +1,27 @@
 {% extends 'base.html' %}
 {% load static %}
 
+
+{% block header_reference %}
+    <link rel="stylesheet" href="{% static 'articles/style.css' %}">
+{% endblock %}
 {% block title %}
     articles
 {% endblock %}
 
-{% block content %}
-    <h1>Articles List</h1>
-    {% for article in articles %}
-        <div class="container">
-            <h2><a href="#">{{ article.name }}</a></h2>
-            <p>{{ article.snippet }}</p>
-            <p>{{ article.date }}</p>
-        </div>
 
-    {% endfor %}
+{% block content %}
+    <div class="total">
+        <h1>Articles List</h1>
+        {% for article in articles %}
+            <div class="container">
+                <h2><a id="a" href="{% url 'article_detail' slug=article.slug %}">{{ article.name }}</a></h2>
+                <p>{{ article.snippet }}</p>
+                <p>{{ article.date }}</p>
+            </div>
+
+        {% endfor %}
+    </div>
+
 
 {% endblock %}
